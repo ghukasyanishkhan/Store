@@ -46,5 +46,9 @@ return [
     'Log Out'=>'Log Out',
     'Add to card'=>'Add to card',
     'Views'=>'Views',
+    'this month'=>'this month',
+    'Total sales'=>'Total sales',
+    'Total orders'=>'Total orders',
+    'Total views'=>'Total views',
 
 ];

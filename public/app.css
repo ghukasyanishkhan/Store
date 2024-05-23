@@ -35,7 +35,8 @@ nav .a {
     color: gray;
     padding: 5px;
 }
-nav .a:hover{
+
+nav .a:hover {
     background-color: rgba(0, 0, 0, 0.08);
 }
 
@@ -96,6 +97,7 @@ main {
 .category .view-button:hover {
     background-color: #45a049;
 }
+
 .user .view-button {
     background-color: #4CAF50;
     color: white;
@@ -119,11 +121,12 @@ main {
 .category table {
     width: 100%;
 }
-.buttons{
+
+.buttons {
     display: flex;
 }
 
-.buttons a{
+.buttons a {
     margin-right: 20px;
 }
 
@@ -143,13 +146,13 @@ main {
     text-decoration: underline;
 }
 
-.cancel{
+.cancel {
     text-decoration: none;
     color: blue;
     font-size: 18px;
 }
 
-.cancel:hover{
+.cancel:hover {
     text-decoration: underline;
 }
 
@@ -218,7 +221,6 @@ main {
 }
 
 
-
 .item table {
     width: 100%;
     border-collapse: collapse;
@@ -256,6 +258,7 @@ main {
     border-radius: 4px;
     cursor: pointer;
 }
+
 .create-item form {
     max-width: 400px;
     margin: 0 auto;
@@ -323,9 +326,11 @@ main {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
-.edit-item textarea{
+
+.edit-item textarea {
     height: 150px;
 }
+
 .edit-item button {
     padding: 8px 16px;
     font-size: 14px;
@@ -365,7 +370,7 @@ main {
     cursor: pointer;
 }
 
-.edit-photo{
+.edit-photo {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
@@ -391,6 +396,7 @@ main {
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+
 .edit-profile {
     width: 600px;
     margin: 0 auto;
@@ -499,6 +505,7 @@ main {
 .register-container form input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
 .login-container {
     background-color: #fff;
     padding: 20px;
@@ -506,14 +513,17 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
 }
+
 .login-container h2 {
     margin-top: 0;
     text-align: center;
 }
+
 .login-container form {
     display: flex;
     flex-direction: column;
 }
+
 .login-container form input[type="text"],
 .login-container form input[type="password"] {
     padding: 10px;
@@ -523,11 +533,13 @@ main {
     font-size: 16px;
     transition: border-color 0.3s ease;
 }
+
 .login-container form input[type="text"]:focus,
 .login-container form input[type="password"]:focus {
     outline: none;
     border-color: #007bff;
 }
+
 .login-container form input[type="submit"] {
     padding: 10px;
     border: none;
@@ -538,10 +550,12 @@ main {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .login-container form input[type="submit"]:hover {
     background-color: #0056b3;
 }
-.order{
+
+.order {
     border-radius: 5px;
     width: 300px;
     height: fit-content;
@@ -549,9 +563,10 @@ main {
     text-align: center;
     font-size: 24px;
     position: relative;
-    background-color:  rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.15);
 }
-.order button{
+
+.order button {
     position: absolute;
     top: 0;
     left: 0;
@@ -563,6 +578,7 @@ main {
     cursor: pointer;
     border-radius: 10px;
 }
+
 .header .a {
     color: black;
     text-decoration: none;
@@ -574,6 +590,7 @@ main {
 .header .a:hover {
     text-decoration: underline;
 }
+
 .header .search {
     position: relative;
     width: 400px;
@@ -601,6 +618,7 @@ main {
     height: 100%;
     width: auto;
 }
+
 .header .lang {
     display: flex;
     flex-direction: column;
@@ -631,7 +649,60 @@ main {
     width: 70%;
     margin: 8px;
 }
-.header .user-name{
+
+.header .user-name {
     font-size: 22px;
     color: gray;
 }
+
+.statistics {
+    grid-column: 1/4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.statistics > div {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    height: 50%;
+}
+
+.statistics > div p:first-child {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.statistics > div span {
+    font-size: 60px;
+    font-weight: bold;
+    color: #4CAF50;
+    display: block;
+    margin: 10px 0;
+}
+
+.statistics > div p:last-child {
+    font-size: 18px;
+    color: #777777;
+}
+
+@media (max-width: 768px) {
+    .statistics {
+        flex-direction: column;
+    }
+    .statistics > div {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+

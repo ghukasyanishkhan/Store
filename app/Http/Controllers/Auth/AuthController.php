@@ -6,9 +6,12 @@ namespace App\Http\Controllers\Auth;
 use App\helpers\Functions;
 use App\Mail\UserMessageToAdmin;
 use App\Models\Category;
+use App\Models\Item;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -153,10 +156,31 @@ class AuthController extends Controller
     public function dashboard()
     {
         if (Auth::check()) {
-            return view('dashboard');
+            $currentMonth = Carbon::now()->month;
+            $currentYear = Carbon::now()->year;
+
+            $totalOrders = Order::whereMonth('created_at', $currentMonth)
+                ->whereYear('created_at', $currentYear)
+                ->count();
+
+            $totalSales = Order::whereMonth('created_at', $currentMonth)
+                ->whereYear('created_at', $currentYear)
+                ->get()
+                ->sum('item.price');
+
+            $totalViews = Item::whereMonth('created_at', $currentMonth)
+                ->whereYear('created_at', $currentYear)
+                ->sum('views');
+
+            return view('dashboard', [
+                'totalSales' => $totalSales,
+                'totalOrders' => $totalOrders,
+                'totalViews' => $totalViews
+            ]);
         }
         return redirect("login")->with('error', 'You are not allowed to access');
     }
+
 
     public function home()
     {

@@ -25,7 +25,7 @@
                     @include('admin.components.order')
                 @endforeach
             @else
-                {{ 'empty' }}
+                @include('admin.components.statistics')
             @endif
         </main>
     </div>
